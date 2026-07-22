@@ -1,0 +1,83 @@
+# ------------------------------------------------------------------
+# Jekyll config for GitHub Pages
+# Repo name must be: <your-github-username>.github.io
+# Site goes live automatically at https://<your-github-username>.github.io
+# No build step needed — GitHub Pages runs Jekyll for you on every push.
+# ------------------------------------------------------------------
+
+title: "LumaLab5 — AI Engineering Journal"
+description: >-
+  Notes, projects, and evals from a 10-year software engineer
+  (DeFi / full-stack) re-specializing into AI engineering.
+  Following along: transformers from scratch, RAG, agents, evals,
+  fine-tuning, and inference.
+
+# Base URL — leave empty if using <username>.github.io
+# Set to "/repo-name" only if this is a PROJECT page (not a user/org page)
+baseurl: ""
+url: "https://yourusername.github.io"   # <-- replace with your actual GitHub username
+
+# Author / social — fill these in
+author:
+  name: "LumaLab5"
+  email: "yangliu8321@gmail.com"
+  github: lumalab5
+
+# Theme — "minima" ships with every GitHub Pages build, zero setup required.
+# Swap later for something like "jekyll-theme-chirpy" if you want a fancier
+# blog-first layout (requires adding it to the Gemfile).
+theme: minima
+
+# Minima-specific header links (only used if theme: minima)
+minima:
+  social_links:
+    - { platform: github,   user_url: "https://github.com/lumalab5" }
+
+# Plugins — all of these are whitelisted and safe on GitHub Pages
+# (no need to run `bundle exec jekyll build` locally; GitHub does it)
+plugins:
+  - jekyll-feed        # generates /feed.xml (RSS) — lets people (and Latent Space Discord folks) subscribe
+  - jekyll-seo-tag      # basic SEO / social preview meta tags
+  - jekyll-sitemap      # generates sitemap.xml
+
+# Permalinks — clean URLs like /2026/01/22/post-title/
+permalink: /:year/:month/:day/:title/
+
+# Markdown / syntax highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Collections — lets you organize posts by course phase if you want
+# (optional; comment out if you'd rather keep everything as flat posts)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Default front-matter (saves you retyping layout: post every time)
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      layout: page
+
+# Files/folders Jekyll should ignore when building
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .venv
+  - "*.log"
+
+# Timezone for post dates
+timezone: America/New_York   # <-- adjust if needed (Miami = US/Eastern, same value works)

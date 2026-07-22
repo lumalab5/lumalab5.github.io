@@ -15,7 +15,7 @@ description: >-
 # Base URL — leave empty if using <username>.github.io
 # Set to "/repo-name" only if this is a PROJECT page (not a user/org page)
 baseurl: ""
-url: "https://yourusername.github.io"   # <-- replace with your actual GitHub username
+url: "https://lumalab5.github.io"   # <-- replace with your actual GitHub username
 
 # Author / social — fill these in
 author:
